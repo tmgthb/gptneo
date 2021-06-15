@@ -12,3 +12,5 @@ def modelgpt():
   generator = pipeline('text-generation', model='EleutherAI/gpt-neo-125M')
   gpt_text = generator(prompt_text, do_sample=True, min_length=50)
   return st.text(gpt_text)
+
+modelgpt()
