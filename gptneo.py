@@ -5,7 +5,7 @@ import torch
 from transformers import pipeline, AutoModelForCausalLM
 st.title('GPT-Neo')
 st.text('125 Million Parameter model')
-prompt_text = st.text_input(label="Write few words", value="Insert you text here")
+prompt_text = st.text_input(label="Type the beginning words ", value="Type here")
 generator = pipeline('text-generation', model='EleutherAI/gpt-neo-125M')
 gpt_text = generator(prompt_text, do_sample=True, min_length=50)
-st.text(gpt_text)
+st.text(gpt_text['generated_text'])
